@@ -1,0 +1,13 @@
+version: '3'
+services:
+  front:
+    build: .
+    volumes:
+      - .:/nextjs-catchup
+      - node_modules:/nextjs-catchup/node_modules
+    ports:
+      - "3001:3000"
+    tty: true
+
+volumes:
+  node_modules:
