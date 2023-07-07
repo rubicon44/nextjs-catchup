@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import userData from '../../[username]/data.json';
+import userData from '../../app/[username]/data.json';
 
 export const useUserProjectTasks = () => {
   const pathname = usePathname();

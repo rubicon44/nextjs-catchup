@@ -1,7 +1,7 @@
 'use client';
 
 import { FC } from 'react';
-import { useUser } from '../hooks/useUser';
+import { useUser } from '../../hooks/useUser';
 
 const UserPage: FC = () => {
   const user = useUser();
