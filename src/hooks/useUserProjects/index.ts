@@ -1,22 +1,22 @@
-'use client';
-
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import userData from '../../[username]/data.json';
+import userData from '../../app/[username]/data.json';
 
 export const useUserProjects = () => {
   const pathname = usePathname();
   const username = pathname.split('/')[1];
 
-  const [userProjects, setUserProjects] = useState<{ id: number; name: string }[]>([]);
+  const [projects, setProjects] = useState<any[]>([]);
 
   useEffect(() => {
     const foundUser = userData.users.find((user) => user.username === username);
     if (foundUser) {
       const userProjects = userData.projects.filter((project) => project.user_id === foundUser.id);
-      setUserProjects(userProjects);
+      setProjects(userProjects);
+    } else {
+      setProjects([]);
     }
   }, [username]);
 
-  return userProjects;
+  return projects;
 };

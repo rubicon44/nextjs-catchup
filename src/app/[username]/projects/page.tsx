@@ -1,8 +1,8 @@
 'use client';
 
 import { FC } from 'react';
-import { useUser } from '../../hooks/useUser';
-import { useUserProjects } from '../../hooks/useUserProjects';
+import { useUser } from '../../../hooks/useUser';
+import { useUserProjects } from '../../../hooks/useUserProjects';
 
 const Projects: FC = () => {
   const user = useUser();

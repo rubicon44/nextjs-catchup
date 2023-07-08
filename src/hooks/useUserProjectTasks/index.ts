@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import userData from '../../[username]/data.json';
+import userData from '../../app/[username]/data.json';
 
 export const useUserProjectTasks = () => {
   const pathname = usePathname();
   const username = pathname.split('/')[1];
   const projectID = Number(pathname.split('/')[3]);
 
-  const [tasks, setTasks] = useState<{ id: number; title: string; bio: string }[]>([]);
+  const [tasks, setTasks] = useState<{ id: number; title: string; content: string }[]>([]);
 
   useEffect(() => {
     const foundUser = userData.users.find((user) => user.username === username);
