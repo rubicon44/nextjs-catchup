@@ -6,6 +6,7 @@ export const useUserProjects = () => {
   const pathname = usePathname();
   const username = pathname.split('/')[1];
 
+  // TODO: any
   const [projects, setProjects] = useState<any[]>([]);
 
   useEffect(() => {
